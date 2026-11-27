@@ -1,0 +1,57 @@
+:root{--primary:#4f46e5;--dark:#1e1b4b;--accent:#f43f5e;--bg:#f8fafc;--card:#fff;--text:#1f2937;--muted:#6b7280;--ok:#16a34a;--bad:#dc2626}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Sarabun","Noto Sans Thai",Tahoma,sans-serif;background:var(--bg);color:var(--text);line-height:1.8}
+.container{max-width:1080px;margin:auto;padding:0 20px}
+a{color:var(--primary)}
+/* Header & Menu */
+.site-header{background:var(--dark);position:sticky;top:0;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;flex-wrap:wrap}
+.brand{color:#fff;font-weight:700;font-size:1.25rem;text-decoration:none}
+.site-header ul{list-style:none;display:flex;gap:4px;flex-wrap:wrap}
+.site-header nav a{display:block;color:#c7d2fe;text-decoration:none;padding:8px 10px;border-radius:8px;font-size:.92rem;line-height:1.3;text-align:center}
+.site-header nav a small{display:block;font-size:.7rem;opacity:.7}
+.site-header nav a:hover,.site-header nav a.active{background:var(--primary);color:#fff}
+.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+@media(max-width:900px){
+ .menu-toggle{display:block}
+ .site-header nav{display:none;width:100%;padding-bottom:12px}
+ .site-header.open nav{display:block}
+ .site-header ul{flex-direction:column}
+ .site-header nav a{text-align:left}
+}
+/* Content */
+.hero{background:linear-gradient(135deg,var(--dark),var(--primary));color:#fff;padding:70px 0 60px;text-align:center}
+.hero h1{font-size:2.4rem;margin-bottom:10px}
+.hero p{max-width:720px;margin:auto;opacity:.95}
+.page-title{background:linear-gradient(135deg,var(--dark),var(--primary));color:#fff;padding:40px 0}
+.page-title small{opacity:.8}
+main{padding:40px 0}
+section{margin-bottom:36px}
+h2{color:var(--dark);margin-bottom:12px;border-left:5px solid var(--accent);padding-left:12px}
+h3{color:var(--primary);margin:14px 0 6px}
+p,li{margin-bottom:8px}
+ul.list,ol.list{padding-left:24px}
+.card{background:var(--card);border-radius:14px;padding:22px;box-shadow:0 2px 10px rgba(0,0,0,.06);margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:700;margin:6px;border:0;cursor:pointer;font-size:1rem}
+.btn.secondary{background:#fff;color:var(--primary)}
+.btn:hover{opacity:.9}
+.tag{display:inline-block;background:#eef2ff;color:var(--primary);padding:2px 10px;border-radius:999px;font-size:.8rem;margin-right:6px}
+.note{background:#fff7ed;border-left:5px solid #f97316;padding:14px 18px;border-radius:8px;margin:14px 0}
+.law-box{background:#eef2ff;border-left:5px solid var(--primary);padding:14px 18px;border-radius:8px;margin:10px 0}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;margin:10px 0}
+th,td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:left;vertical-align:top}
+th{background:var(--dark);color:#fff}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;position:relative;padding:12px 12px 12px 56px;background:#fff;border-radius:10px;margin-bottom:10px;box-shadow:0 1px 6px rgba(0,0,0,.05)}
+.steps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+/* Quiz */
+.q{background:#fff;border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.q label{display:block;padding:8px 12px;border:1px solid #e5e7eb;border-radius:8px;margin:6px 0;cursor:pointer}
+.q label:hover{background:#f1f5f9}
+.q.correct{border-left:6px solid var(--ok)}
+.q.wrong{border-left:6px solid var(--bad)}
+.explain{display:none;margin-top:10px;padding:10px 14px;border-radius:8px;background:#f1f5f9}
+.q.checked .explain{display:block}
+.score{font-size:1.4rem;font-weight:700;text-align:center;padding:20px;border-radius:12px;background:#eef2ff;margin:20px 0;display:none}
+footer{background:var(--dark);color:#c7d2fe;text-align:center;padding:24px 0;font-size:.9rem}
